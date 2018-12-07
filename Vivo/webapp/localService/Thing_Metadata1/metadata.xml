@@ -1,0 +1,150 @@
+<?xml version="1.0" ?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+	<edmx:DataServices m:DataServiceVersion="1.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+		xmlns:sap="http://www.sap.com/Protocols/SAPData">
+		<Schema Namespace="com.sap.appiot" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="Thing">
+				<Key>
+					<PropertyRef Name="ThingId"></PropertyRef>
+				</Key>
+				<Property Name="ThingId" Type="Edm.String" Nullable="false">
+					<Documentation>
+						<LongDescription>Thing unique ID</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingISOCode" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing Language code</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingDescription" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing description</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingName" Type="Edm.String" Nullable="false">
+					<Documentation>
+						<LongDescription>Thing name</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingExternalId" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing external id</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingType" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing Type ID associated with the Thing</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ObjectGroup" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Object group used to create the Thing</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="BPName" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Business partner name associated for the Thing</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="BPLandlinePhoneNumber" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Landline phone number of Business partner</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="BPMobilePhoneNumber" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Mobile phone number of Business partner</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingCustomerId" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Business partner ID associated for the Thing</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingRegionDescription" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Region where Thing is located</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingCountryDescription" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Country where the Thing is located</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingCountryId" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Country code where the Thing is located</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingCommunicationData" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing address details</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingLocationId" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing location ID</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="AlternateId" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing AlternateId</LongDescription>
+					</Documentation>
+				</Property>
+				<NavigationProperty Name="DYN_ENT_dapt_ox181026100231_vivotanks__Image"
+					Relationship="com.sap.appiot.DYN_ENT_dapt_ox181026100231_vivotanks__Image" FromRole="ThingEntities"
+					ToRole="DYN_ENT_dapt_ox181026100231_vivotanks__ImageEntities"></NavigationProperty>
+				<NavigationProperty Name="DYN_ENT_dapt_ox181026100231_vivotanks__Bheki_Dip_Reading"
+					Relationship="com.sap.appiot.DYN_ENT_dapt_ox181026100231_vivotanks__Bheki_Dip_Reading" FromRole="ThingEntities"
+					ToRole="DYN_ENT_dapt_ox181026100231_vivotanks__Bheki_Dip_ReadingEntities"></NavigationProperty>
+			</EntityType>
+			<EntityType Name="DYN_ENT_dapt_ox181026100231_vivotanks__Bheki_Dip_Reading" sap:semantics="timeseries">
+				<Key>
+					<PropertyRef Name="ThingId"></PropertyRef>
+				</Key>
+				<Property Name="ThingId" Type="Edm.String" Nullable="false"></Property>
+				<Property Name="Bheki_Dip_Reading.Measure_Fuel_Level" Type="Edm.Int32" AttributeType="com.sap.iot.core.LowLowerThreshold"></Property>
+				<Property Name="Bheki_Dip_Reading.Measure_Fuel_Level.LowLowerThreshold9245." Type="Edm.Int32"
+					AttributeType="com.sap.iot.core.LowLowerThreshold"></Property>
+				<Property Name="Bheki_Dip_Reading.Measure_Fuel_Level.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="Bheki_Dip_Reading.Measure_Fuel_Level.LowLowerThreshold9245..Timestamp" Type="Edm.DateTimeOffset"></Property>
+			</EntityType>
+			<EntityType Name="DYN_ENT_dapt_ox181026100231_vivotanks__Image">
+				<Key>
+					<PropertyRef Name="ThingId"></PropertyRef>
+				</Key>
+				<Property Name="ThingId" Type="Edm.String" Nullable="false"></Property>
+				<Property Name="Image.ImageName" Type="Edm.String"></Property>
+				<Property Name="Image.ImageName.Timestamp" Type="Edm.DateTimeOffset"></Property>
+			</EntityType>
+			<Association Name="DYN_ENT_dapt_ox181026100231_vivotanks__Image">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.DYN_ENT_dapt_ox181026100231_vivotanks__Image" Multiplicity="1"
+					Role="DYN_ENT_dapt_ox181026100231_vivotanks__ImageEntities"></End>
+			</Association>
+			<Association Name="DYN_ENT_dapt_ox181026100231_vivotanks__Bheki_Dip_Reading">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.DYN_ENT_dapt_ox181026100231_vivotanks__Bheki_Dip_Reading" Multiplicity="1"
+					Role="DYN_ENT_dapt_ox181026100231_vivotanks__Bheki_Dip_ReadingEntities"></End>
+			</Association>
+			<EntityContainer Name="CompositeThingsThingType" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="Things" EntityType="com.sap.appiot.Thing"></EntitySet>
+				<EntitySet Name="DYN_ENT_dapt_ox181026100231_vivotanks__Bheki_Dip_Readings"
+					EntityType="com.sap.appiot.DYN_ENT_dapt_ox181026100231_vivotanks__Bheki_Dip_Reading"></EntitySet>
+				<EntitySet Name="DYN_ENT_dapt_ox181026100231_vivotanks__Images" EntityType="com.sap.appiot.DYN_ENT_dapt_ox181026100231_vivotanks__Image"></EntitySet>
+				<AssociationSet Name="DYN_ENT_dapt_ox181026100231_vivotanks__Image"
+					Association="com.sap.appiot.DYN_ENT_dapt_ox181026100231_vivotanks__Image">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="DYN_ENT_dapt_ox181026100231_vivotanks__Images" Role="DYN_ENT_dapt_ox181026100231_vivotanks__ImageEntities"></End>
+				</AssociationSet>
+				<AssociationSet Name="DYN_ENT_dapt_ox181026100231_vivotanks__Bheki_Dip_Reading"
+					Association="com.sap.appiot.DYN_ENT_dapt_ox181026100231_vivotanks__Bheki_Dip_Reading">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="DYN_ENT_dapt_ox181026100231_vivotanks__Bheki_Dip_Readings"
+						Role="DYN_ENT_dapt_ox181026100231_vivotanks__Bheki_Dip_ReadingEntities"></End>
+				</AssociationSet>
+			</EntityContainer>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
