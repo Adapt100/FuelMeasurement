@@ -1,23 +1,14 @@
-<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:iot="sap.ui.iot.controls" xmlns:m="sap.m"
-	xmlns:core="sap.ui.core" xmlns:suite="sap.suite.ui.commons" xmlns="sap.uxap" xmlns:semantic="sap.m.semantic" xmlns:layout="sap.ui.layout"
-	xmlns:f="sap.ui.layout.form" xmlns:viz="sap.viz.ui5.controls" xmlns:iotele="sap.ui.iot.elements"
-	xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="Vivo.controller.ThingPage"
-	displayBlock="true">
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:iot="sap.ui.iot.controls" xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:suite="sap.suite.ui.commons" xmlns="sap.uxap" xmlns:semantic="sap.m.semantic" xmlns:layout="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:viz="sap.viz.ui5.controls" xmlns:iotele="sap.ui.iot.elements" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="Vivo.controller.ThingPage" displayBlock="true">
 	<m:Page title="{i18n>thingpage}" showNavButton="true" navButtonPress="handleNavBackPress">
-		<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="false" showHeaderContent="true"
-			flexEnabled="true">
-			<headerTitle >
-				<ObjectPageHeader objectTitle="{thingPageModel>/detailsData/ThingName}" objectSubtitle="{thingPageModel>/detailsData/ThingName}"
-					objectImageAlt="{i18n>thing}" id="ObjectPageLayoutHeaderTitle" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="true"
-					isObjectSubtitleAlwaysVisible="true" showPlaceholder="true"></ObjectPageHeader>
+		<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="false" showHeaderContent="true" flexEnabled="true">
+			<headerTitle>
+				<ObjectPageHeader objectTitle="{thingPageModel>/detailsData/ThingName}" objectSubtitle="{thingPageModel>/detailsData/ThingName}" objectImageAlt="{i18n>thing}" id="ObjectPageLayoutHeaderTitle" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true" showPlaceholder="true"/>
 			</headerTitle>
 			<headerContent>
 				<m:HBox id="idSemanticBarHBox" width=".5rem" height="5rem" class="objectSematicBar"/>
 				<layout:VerticalLayout>
-					<core:Icon src="sap-icon://machine" width="5rem" id="idHeaderIcon" height="5rem" size="4rem" visible="false" backgroundColor="white"
-						color="#d3d7d9"/>
-					<m:Image id="idHeaderImage" src="{parts:[{path:'thingPageModel>/detailsData/ThingId'}], formatter:'.formatter.formatImageURLThingPage'}"
-						alt="{i18n>noImage}" error="onImageLoadError" width="5rem" height="5rem" visible="true"/>
+					<core:Icon src="sap-icon://machine" width="5rem" id="idHeaderIcon" height="5rem" size="4rem" visible="false" backgroundColor="white" color="#d3d7d9"/>
+					<m:Image id="idHeaderImage" src="{parts:[{path:'thingPageModel>/detailsData/ThingId'}], formatter:'.formatter.formatImageURLThingPage'}" alt="{i18n>noImage}" error="onImageLoadError" width="5rem" height="5rem" visible="true"/>
 				</layout:VerticalLayout>
 				<layout:VerticalLayout>
 					<m:ObjectStatus id="objectStatusLabel1" title="ThingExternalId"/>
@@ -92,12 +83,9 @@
 					<subSections>
 						<ObjectPageSubSection title="{i18n>timeline}">
 							<blocks>
-								<suite:Timeline id="idTimeline" growing="false" enableScroll="false" enableDoubleSided="true" showHeaderBar="false" showSearch="false"
-									showIcons="false" content="{thingPageModel>/eventsData}" showFilterBar="false">
+								<suite:Timeline id="idTimeline" growing="false" enableScroll="false" enableDoubleSided="true" showHeaderBar="false" showSearch="false" showIcons="false" content="{thingPageModel>/eventsData}" showFilterBar="false">
 									<suite:content>
-										<suite:TimelineItem title="{thingPageModel>ExternalId}"
-											dateTime="{parts:[{path:'thingPageModel>BusinessTimestamp'}], formatter:'.formatter.formatTimeStamp'}" userNameClickable="false"
-											text="{thingPageModel>Description}"></suite:TimelineItem>
+										<suite:TimelineItem title="{thingPageModel>ExternalId}" dateTime="{parts:[{path:'thingPageModel>BusinessTimestamp'}], formatter:'.formatter.formatTimeStamp'}" userNameClickable="false" text="{thingPageModel>Description}"/>
 									</suite:content>
 								</suite:Timeline>
 							</blocks>
@@ -106,5 +94,12 @@
 				</ObjectPageSection>
 			</sections>
 		</ObjectPageLayout>
+	<m:footer>
+	    <m:Bar id="bar0">
+	    <m:contentLeft>
+	        <m:Link text="Link to URL" id="link0" href="https://webidetesting6390063-e11413268.dispatcher.eu2.hana.ondemand.com/webapp/index.html?hc_orionpath=%2FDI_webide_di_workspace2mfijgruq1srlu77%2F0main_openSAP_repo%2Fbhktest&amp;neo-di-affinity=BIGipServerdisapwebide.eu2.hana.ondemand.com+%21kAXNh%2BPD3ZS8LmLiuzr8z9leewU3vcsrnOrhwOa0Dk5D13DiVSzrX62HUqCy6MQmZOqruFZHcrpVo7w%3D&amp;origional-url=index.html&amp;sap-ui-appCacheBuster=..%2F..%2F&amp;sap-ui-xx-componentPreload=off"/>
+	    </m:contentLeft>
+	    </m:Bar>
+	</m:footer>
 	</m:Page>
 </mvc:View>
