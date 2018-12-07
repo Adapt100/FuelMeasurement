@@ -21,7 +21,6 @@
 									</iotele:IoTThingListElement>
 								</iot:things>
 							</iot:IoTThingList>
-							<DatePicker width="100%" id="picker0"/>
 						</items>
 					</VBox>
 					<VBox width="75%" direction="Column">
