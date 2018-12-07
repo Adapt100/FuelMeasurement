@@ -1,23 +1,18 @@
-<mvc:View controllerName="Vivo.controller.LandingPage" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:iot="sap.ui.iot.controls"
-	xmlns:iotele="sap.ui.iot.elements" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
-	xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:core="sap.ui.core" displayBlock="true">
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:iot="sap.ui.iot.controls" xmlns:iotele="sap.ui.iot.elements" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:core="sap.ui.core" controllerName="Vivo.controller.LandingPage" displayBlock="true">
 	<Page title="{i18n>landingpage}" enableScrolling="false">
 		<content>
 			<HBox width="100%" height="100%">
 				<items>
 					<VBox width="25%" direction="Column">
 						<items>
-							<iot:IoTThingList headerText="Thing List" initialSortColumn="ThingId" initialSortOrder="Ascending" rowSelect="zoomToMap" controlType="List"
-								things="{path:'/Things',parameters:{expand:' HierarchyElements, DYN_ENT_dapt_ox181026100231_vivotanks__Image, DYN_ENT_com_sap_appiot_eventtypes__StandardEventType, DYN_ENT_dapt_ox181026100231_vivotanks__Bheki_Dip_Reading '}}">
+							<iot:IoTThingList headerText="Thing List" initialSortColumn="ThingId" initialSortOrder="Ascending" rowSelect="zoomToMap" controlType="List" things="{path:'/Things',parameters:{expand:' HierarchyElements, DYN_ENT_dapt_ox181026100231_vivotanks__Image, DYN_ENT_com_sap_appiot_eventtypes__StandardEventType, DYN_ENT_dapt_ox181026100231_vivotanks__Bheki_Dip_Reading '}}">
 								<iot:columns>
 									<iotele:IoTThingListColumnHeader text="{i18n>thingListOnMapInformation1}"/>
 									<iotele:IoTThingListColumnHeader text="{i18n>thingListOnMapInformation2}"/>
 									<iotele:IoTThingListColumnHeader text="{i18n>thingListOnMapInformation3}"/>
 								</iot:columns>
 								<iot:things>
-									<iotele:IoTThingListElement thingImage="{ThingId}" highSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/High}"
-										lowSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/Low}"
-										mediumSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/Medium}">
+									<iotele:IoTThingListElement thingImage="{ThingId}" highSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/High}" lowSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/Low}" mediumSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/Medium}">
 										<iotele:cells>
 											<iotele:IoTThingListColumn text="{ThingName}"/>
 											<iotele:IoTThingListColumn text="{ThingId}"/>
@@ -26,31 +21,19 @@
 									</iotele:IoTThingListElement>
 								</iot:things>
 							</iot:IoTThingList>
+							<DatePicker width="100%" id="picker0"/>
 						</items>
 					</VBox>
 					<VBox width="75%" direction="Column">
 						<items>
-							<iot:IoTMap id="idMap"
-								things="{path:'/Things',parameters:{expand:' HierarchyElements, DYN_ENT_dapt_ox181026100231_vivotanks__Image, DYN_ENT_com_sap_appiot_eventtypes__StandardEventType, DYN_ENT_dapt_ox181026100231_vivotanks__Bheki_Dip_Reading '}}">
+							<iot:IoTMap id="idMap" things="{path:'/Things',parameters:{expand:' HierarchyElements, DYN_ENT_dapt_ox181026100231_vivotanks__Image, DYN_ENT_com_sap_appiot_eventtypes__StandardEventType, DYN_ENT_dapt_ox181026100231_vivotanks__Bheki_Dip_Reading '}}">
 								<iot:things>
 									<iotele:IoTMapElement latitude="{Latitude}" longitude="{Longitude}" thingid="{ThingId}">
 										<iotele:status>
-											<iotele:IoTStatusElement id="__element0" highSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/High}"
-												lowSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/Low}"
-												mediumSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/Medium}"/>
+											<iotele:IoTStatusElement id="__element0" highSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/High}" lowSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/Low}" mediumSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/Medium}"/>
 										</iotele:status>
 										<iotele:thingcard>
-											<iotele:IoTThingCardElement thingCardImage="{ThingId}" MultiThingCardHeaderPosition1="{ThingName}"
-												MultiThingCardHeaderPosition2="{ThingExternalId}" SingleThingCardContactInfoLabel1="BusinessPartnerName"
-												SingleThingCardContactInfo1="{BusinessPartnerName}" SingleThingCardContactInfoLabel2="BPMobilePhoneNumber"
-												SingleThingCardContactInfo2="{BPMobilePhoneNumber}" SingleThingCardContactInfoLabel3="BPLandlinePhoneNumber"
-												SingleThingCardContactInfo3="{BPLandlinePhoneNumber}" SingleThingCardContactsVisible="true" SingleThingCardEventsVisible="true"
-												SingleThingCardHeaderPosition1="{ThingName}" SingleThingCardHeaderPosition2="{BusinessPartnerName}"
-												SingleThingCardHeaderPosition3="{ThingId}" SingleThingCardSecondSectionTitle="Events" SingleThingCardFooterVisible="true"
-												MultiThingCardFooterVisible="true" SingleThingCardThirdSectionTitle="Contact Info" singleThingCardFooterText="Analysis Page"
-												multiThingCardFooterText="Thing List" singleThingCardTitle="Thing Detail" multiThingCardTitle="Thing Overview"
-												multiThingCardRowSelect="oMultiRowSelect" multiThingCardFooterSelect="oMultiFooterSelect" singleThingCardHeaderSelect="oSingleHeaderSelect"
-												singleThingCardFooterSelect="oSingleFooterSelect"/>
+											<iotele:IoTThingCardElement thingCardImage="{ThingId}" MultiThingCardHeaderPosition1="{ThingName}" MultiThingCardHeaderPosition2="{ThingExternalId}" SingleThingCardContactInfoLabel1="BusinessPartnerName" SingleThingCardContactInfo1="{BusinessPartnerName}" SingleThingCardContactInfoLabel2="BPMobilePhoneNumber" SingleThingCardContactInfo2="{BPMobilePhoneNumber}" SingleThingCardContactInfoLabel3="BPLandlinePhoneNumber" SingleThingCardContactInfo3="{BPLandlinePhoneNumber}" SingleThingCardContactsVisible="true" SingleThingCardEventsVisible="true" SingleThingCardHeaderPosition1="{ThingName}" SingleThingCardHeaderPosition2="{BusinessPartnerName}" SingleThingCardHeaderPosition3="{ThingId}" SingleThingCardSecondSectionTitle="Events" SingleThingCardFooterVisible="true" MultiThingCardFooterVisible="true" SingleThingCardThirdSectionTitle="Contact Info" singleThingCardFooterText="Analysis Page" multiThingCardFooterText="Thing List" singleThingCardTitle="Thing Detail" multiThingCardTitle="Thing Overview" multiThingCardRowSelect="oMultiRowSelect" multiThingCardFooterSelect="oMultiFooterSelect" singleThingCardHeaderSelect="oSingleHeaderSelect" singleThingCardFooterSelect="oSingleFooterSelect"/>
 										</iotele:thingcard>
 									</iotele:IoTMapElement>
 								</iot:things>
