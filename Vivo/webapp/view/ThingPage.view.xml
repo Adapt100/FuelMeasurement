@@ -37,6 +37,20 @@
 										<m:Label text="ThingRegionDescription"/>
 										<m:Text text="{thingPageModel>/detailsData/ThingRegionDescription}"/>
 									</layout:VerticalLayout>
+								<layout:content>
+								    <layout:VerticalLayout width="100%" id="layout8">
+								        <layout:content>
+								            <m:Label text="ThingSerialNumber" width="100%"/>
+								            <m:Text text="{thingPageModel>/detailsData/ThingSerialNumber}"/>
+								        </layout:content>
+								    </layout:VerticalLayout>
+								</layout:content>
+								<layout:VerticalLayout width="100%" id="layout9">
+								    <layout:content>
+								        <m:Label text="ThingTankId" width="100%"/>
+								        <m:Text text="{thingPageModel>/detailsData/ThingThankId}"/>
+								    </layout:content>
+								</layout:VerticalLayout>
 								</layout:Grid>
 							</blocks>
 						</ObjectPageSubSection>
