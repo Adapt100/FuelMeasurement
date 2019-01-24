@@ -94,6 +94,11 @@ sap.ui.define([
 				oChart.setAssetId(this.sThingId);
 			}
 		},
+		
+		_onDipReadings: function() {
+			//alert("load Dip Readings app");	
+			window.location.replace("https://webidetesting3166535-e11413268.dispatcher.eu2.hana.ondemand.com/test-resources/sap/ushell/shells/sandbox/fioriSandbox.html?hc_orionpath=%2FDI_webide_di_workspacetbyyamdgpjn4eypq%2FDipReadings&neo-di-affinity=BIGipServerdisapwebide.eu2.hana.ondemand.com+%21EPnem41lp74mU3btuWrYiXgVZCiDIjnsx%2B7YG21JbXHl43tF4Cv9nc2g7Pze651rcekVCvlfw0jEFrU%3D&sap-ui-xx-componentPreload=off&sap-ui-appCacheBuster=..%2F..%2F..%2F..%2F..%2F&sap-ushell-test-url-url=..%2F..%2F..%2F..%2F..%2Fwebapp&sap-ushell-test-url-additionalInformation=SAPUI5.Component%3Dcom.sap.build.e11413268-eu_2.dipReadings#Test-url");
+		},
 
 		handleNavBackPress: function () {
 			window.history.back();
